@@ -29,10 +29,12 @@ myFunction();
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(num) {
-  for (let i=0; i<num.length; i++);
-
+  let counter = 0;
+  for (let i=0; i<num.length; i++){
+    counter += summation[i];
   }
- 
+  return summation(num);
+}
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -128,16 +130,18 @@ console.log (`Task 2 Request 4:`, USApop(populationAnimals(zooAnimals)))
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
-  }
- 
+  function consume(a, b, cb){
+  //   let num1 = 0
+  //   let num2 = 0
+  //   for (let )
+  // }
+
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
   
-function add(/*Your Code Here */){
-    /*Your Code Here*/
+function add(){
+   
   }
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
@@ -148,10 +152,13 @@ function multiply(/*Your Code Here */){
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
-function greeting(/*Your Code Here */){
-   return /*Your Code Here */
+function greeting(consumeCB){
+    let firstName = a
+    let lastName = b
+   return `Hello ${firstName} ${lastName}, nice to meet you!`;
   }
-  
+  console.log (greeting(seye, onigbinde))
+
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
   // console.log(consume(2, 2, add)); // 4
@@ -175,7 +182,6 @@ function CuboidMaker(cuboid){
   this.width = cuboid.width;
   this.height = cuboid.height;
 }
-
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
@@ -209,6 +215,13 @@ function CuboidMaker(cuboid){
 console.log(`Topic 3a:`, cuboid.volume()); // 100
 console.log(`Topic 3b:`, cuboid.surfaceArea()); // 130
  
+
+// Person.prototype.toString = function(){
+//   return  `${this.name}, ${this.age}`;
+// }
+// const seye =new Person('Seye', 34);
+
+// console.log(seye.toString());
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
