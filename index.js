@@ -16,8 +16,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
-
+`The nestedFunction can access the variable internal because of closure though it was declared in myFunction. nestedFunction looked outside its scope for internal as it couldn't find it in the local scope.`
 
 
 
@@ -31,9 +30,11 @@ For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you ma
 function summation(num) {
   let counter = 0;
   for (let i=0; i<num.length; i++){
+    return function count (num){
     counter += summation[i];
   }
-  return summation(num);
+}
+  summation(4);
 }
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -131,39 +132,37 @@ console.log (`Task 2 Request 4:`, USApop(populationAnimals(zooAnimals)))
   */
 
   function consume(a, b, cb){
-  //   let num1 = 0
-  //   let num2 = 0
-  //   for (let )
-  // }
+    let param1 =  a
+    let param2 = b
+    return cb(param1, param2);
 
+  }
   
-  /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
- // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
+//   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
+//  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
   
-function add(){
-   
+function add(param1, param2){
+
+    return param1 + param2;
   }
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
   
-function multiply(/*Your Code Here */){
-   /*Your Code Here */
+function multiply(param1, param2){
+   return param1 * param2;
   }
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
-function greeting(consumeCB){
-    let firstName = a
-    let lastName = b
+function greeting(firstName, lastName){
    return `Hello ${firstName} ${lastName}, nice to meet you!`;
   }
-  console.log (greeting(seye, onigbinde))
 
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-  // console.log(consume(2, 2, add)); // 4
-  // console.log(consume(10, 16, multiply)); // 160
-  // console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+  console.log(`Callback - Add:`, consume(2, 2, add)); // 4
+  console.log(`Callback - Multiply:`, consume(10, 16, multiply)); // 160
+  console.log(`Callback - Greeting:`, consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
   
   
 // 🦁💪 Stretch: If you haven't already, convert your array method callbacks into arrow functions - make sure you comment out this section before you submit your work 🦁💪
@@ -216,12 +215,7 @@ console.log(`Topic 3a:`, cuboid.volume()); // 100
 console.log(`Topic 3b:`, cuboid.surfaceArea()); // 130
  
 
-// Person.prototype.toString = function(){
-//   return  `${this.name}, ${this.age}`;
-// }
-// const seye =new Person('Seye', 34);
 
-// console.log(seye.toString());
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
