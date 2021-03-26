@@ -29,13 +29,18 @@ For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you ma
 
 function summation(num) {
   let counter = 0;
-  for (let i=0; i<num.length; i++){
-    return function count (num){
-    counter += summation[i];
+  for(let i=0; i<num; i++){
+   return counter =+10;
   }
-}
   summation(4);
 }
+
+
+// function range(start, end, num) {
+//   return Array(end - start + 1).fill().map((_, idx) => start + idx)
+// }
+// var result = range(0, num); // [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+// console.log(result);
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -176,16 +181,16 @@ function greeting(firstName, lastName){
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use the constructor function named CuboidMaker to accept properties for length, width, and height which can be initialized as an object
 */
-function CuboidMaker(cuboid){
-  this.length = cuboid.length;
-  this.width = cuboid.width;
-  this.height = cuboid.height;
+function CuboidMaker(attribute){
+  this.length = attribute.length;
+  this.width = attribute.width;
+  this.height = attribute.height;
 }
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
-  CuboidMaker.prototype.volume = function () 
+  CuboidMaker.prototype.volume = function() 
     {
       return (this.length * this.width * this.height); 
     }
@@ -202,12 +207,13 @@ function CuboidMaker(cuboid){
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
+
   function Cuboid(length, width, height){
       CuboidMaker.call(this, length, width, height);
     }
     Cuboid.prototype = Object.create(CuboidMaker.prototype);
     
-    const cuboid = new CuboidMaker(4, 5, 5);
+    const cuboid = new CuboidMaker({length:4, width:5, height:5});
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
@@ -216,14 +222,13 @@ console.log(`Topic 3b:`, cuboid.surfaceArea()); // 130
  
 
 
-
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo {
-  constructor(cuboidTwo){
-    this.length = cuboidTwo.length;
-    this.width = cuboidTwo.width;
-    this.height = cuboidTwo.height;
+  constructor(attribute){
+    this.length = attribute.length;
+    this.width = attribute.width;
+    this.height = attribute.height;
   }
   volume(){
     return (this.length * this.width * this.height); 
@@ -232,7 +237,7 @@ class CuboidMakerTwo {
     return 2 * ((this.length * this.width) + (this.length * this.height) + (this.width * this.height));
   }
 }
-  const cuboidTwo = new CuboidMakerTwo (4, 5, 5)
+  const cuboidTwo = new CuboidMakerTwo({length:4, width:5, height:5})
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
 console.log(`Topic 4a:`, cuboidTwo.volume()); // 100
