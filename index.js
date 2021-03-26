@@ -59,20 +59,13 @@ const zooAnimals = [
   function animalNames(data){
   let displayNames = [];
     const animalNames = data.forEach(function(item){
-  displayNames.push(`name:`, item.animal_name, `scientific:`, item.scientific_name);
+  displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
     });
     return displayNames;
 
   }
   console.log(`Task 2: Request 1:`, animalNames(zooAnimals));
   
-//   function getFinals(data) {
-//     const finalTeam = data.filter(function(item){
-//         return item.Stage === "Final" 
-//     })
-//     return finalTeam;
-// }
-// console.log (`Task 2:`, getFinals(fifaData))
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -124,12 +117,7 @@ const zooAnimals = [
     },0);
     return totalPopulation;
   }
-  // function getAverageGoals(getFinalsCB) {
-  //   const averageTeamGoals = getFinalsCB.reduce(function(accummulator, item){
-  //       return accummulator + item['Home Team Goals'] + item['Away Team Goals']
-  //   },0);
-  //  return (averageTeamGoals/getFinalsCB.length).toFixed(2);
-
+ 
 console.log (`Task 2 Request 4:`, USApop(populationAnimals(zooAnimals)))
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
