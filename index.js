@@ -36,12 +36,6 @@ function summation(num) {
 }
 
 
-// function range(start, end, num) {
-//   return Array(end - start + 1).fill().map((_, idx) => start + idx)
-// }
-// var result = range(0, num); // [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-// console.log(result);
-
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
 
@@ -65,14 +59,14 @@ const zooAnimals = [
   */
 
   function animalNames(data){
-  let displayNames = [];
+    let displayNames = [];
     const animalNames = data.forEach(function(item){
-  displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
+    displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
     });
     return displayNames;
 
   }
-  console.log(`Task 2: Request 1:`, animalNames(zooAnimals));
+    console.log(`Task 2: Request 1:`, animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -83,11 +77,11 @@ const zooAnimals = [
 
   function lowerCaseNames(data){
       const lowerName = data.map(function(item){
-          return item.animal_name.toLowerCase();
+        return item.animal_name.toLowerCase();
         }); 
         return lowerName;  
-      }
-  console.log (`Task 2 Request 2:`, lowerCaseNames(zooAnimals));
+  }
+    console.log (`Task 2 Request 2:`, lowerCaseNames(zooAnimals));
       
 
   
@@ -101,7 +95,7 @@ const zooAnimals = [
       return item.population < 5; 
     })
       return lowerPopulation;
-    }
+  }
     console.log (`Task 2 Request 3:`, lowPopulationAnimals(zooAnimals));
   
   
@@ -113,7 +107,7 @@ const zooAnimals = [
   */
 
  function populationAnimals(data){
-  const animalPopulation = data.filter(function(item){
+    const animalPopulation = data.filter(function(item){
     return item.population; 
   })
     return animalPopulation;
@@ -126,7 +120,7 @@ const zooAnimals = [
     return totalPopulation;
   }
  
-console.log (`Task 2 Request 4:`, USApop(populationAnimals(zooAnimals)))
+  console.log (`Task 2 Request 4:`, USApop(populationAnimals(zooAnimals)))
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -137,29 +131,27 @@ console.log (`Task 2 Request 4:`, USApop(populationAnimals(zooAnimals)))
   */
 
   function consume(a, b, cb){
-    let param1 =  a
+    let param1 = a
     let param2 = b
     return cb(param1, param2);
-
   }
   
 //   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
 //  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
   
-function add(param1, param2){
-
+  function add(param1, param2){
     return param1 + param2;
   }
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
   
-function multiply(param1, param2){
+  function multiply(param1, param2){
    return param1 * param2;
   }
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
-function greeting(firstName, lastName){
+  function greeting(firstName, lastName){
    return `Hello ${firstName} ${lastName}, nice to meet you!`;
   }
 
@@ -210,7 +202,7 @@ function CuboidMaker(attribute){
 
   function Cuboid(length, width, height){
       CuboidMaker.call(this, length, width, height);
-    }
+  }
     Cuboid.prototype = Object.create(CuboidMaker.prototype);
     
     const cuboid = new CuboidMaker({length:4, width:5, height:5});
