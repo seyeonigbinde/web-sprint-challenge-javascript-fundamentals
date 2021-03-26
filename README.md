@@ -53,6 +53,7 @@ d. Window Binding - If a function is invoked as a free function invocation, mean
 
 The super keyword is used to access and call functions on an object's parent in a class.
 
+
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
