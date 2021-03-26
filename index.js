@@ -111,10 +111,26 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+ function populationAnimals(data){
+  const animalPopulation = data.filter(function(item){
+    return item.population; 
+  })
+    return animalPopulation;
   }
-  
+
+  function USApop(populationAnimalsCB){
+    const totalPopulation = populationAnimalsCB.reduce(function(acc, item){
+      return acc + item.population
+    },0);
+    return totalPopulation;
+  }
+  // function getAverageGoals(getFinalsCB) {
+  //   const averageTeamGoals = getFinalsCB.reduce(function(accummulator, item){
+  //       return accummulator + item['Home Team Goals'] + item['Away Team Goals']
+  //   },0);
+  //  return (averageTeamGoals/getFinalsCB.length).toFixed(2);
+
+console.log (`Task 2 Request 4:`, USApop(populationAnimals(zooAnimals)))
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
